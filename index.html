@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frosted Gradient and Bokeh Effect</title>
+  <style>
+    /* General reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #d8f0ff, #f3d1ff, #e1fcf7);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Frosted Bokeh Background */
+    .frosted-container {
+      position: relative;
+      width: 80%;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 15px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Bokeh Effect */
+    .frosted-container::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 80%);
+      z-index: -1;
+      animation: move-bokeh 10s infinite alternate;
+    }
+
+    @keyframes move-bokeh {
+      0% {
+        transform: scale(1) translate(-20px, -20px);
+      }
+      100% {
+        transform: scale(1.2) translate(20px, 20px);
+      }
+    }
+
+    /* Cards Section */
+    .cards {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .card {
+      width: 150px;
+      height: 200px;
+      background-color: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Frosted Gradient Container -->
+  <div class="frosted-container">
+    <!-- Optional content inside -->
+  </div>
+
+  <!-- Cards Section -->
+  <div class="cards">
+    <div class="card">
+      <img src="https://via.placeholder.com/150x200" alt="Card 1">
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150x200" alt="Card 2">
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150x200" alt="Card 3">
+    </div>
+  </div>
+
+</body>
+</html>
