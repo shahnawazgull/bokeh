@@ -67,87 +67,25 @@
         }
 
         .absolute {
-            position: absolute;
+            /* position: absolute; */
             /* top: 50px !important; */
+            width: 100%;
+            padding: 20px;
             inset: 0;
+            display: flex;
             justify-content: center;
-            display: inline-flex;
-            flex-direction: row;
+            /* overflow: hidden; */
         }
 
         .justify-center {
             justify-content: space-between;
         }
 
-        .bg-shape1 {
-            width: 200px;
-            height: 200px;
-            border-radius: 9999px;
-            position: relative;
-            animation: one 10s infinite;
-
-        }
-
-        .bg-shape2 {
-            width: 200px;
-            height: 200px;
-            border-radius: 9999px;
-            position: relative;
-            animation: two 10s infinite;
-
-
-        }
-
-        @keyframes one {
-            0% {
-                left: 0px top 0 px;
-            }
-
-            25% {
-                left: -100px;
-                top: 70px;
-            }
-
-            50% {
-                left: 20px;
-                top: 150px;
-            }
-
-            75% {
-                left: 50px;
-                top: 100px;
-            }
-
-            100% {
-                left: 0px;
-                top: 0px;
-            }
-        }
-
-        @keyframes two {
-            0% {
-                left: 0px top 0 px;
-            }
-
-            25% {
-                left: 50px;
-                top: 10px;
-            }
-
-            50% {
-                left: 100px;
-                top: 50px;
-            }
-
-            75% {
-                left: 50px;
-                top: 100px;
-            }
-
-            100% {
-                left: 0px;
-                top: 0px;
-            }
+        .bg-shape {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 50px;
         }
 
         .opacity {
@@ -160,7 +98,7 @@
         }
 
         .bg-primary {
-            background-color: rgb(0, 204, 255);
+            background-color: rgb(30, 0, 255);
 
         }
 
@@ -172,6 +110,27 @@
         .bg-purple {
             background-color: rgb(149, 0, 215);
         }
+
+        .bg-green {
+            background-color: rgb(0, 255, 81);
+        }
+        .absolute .box{
+            width: 40%;
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: space-around;
+            grid-gap: 30px;
+            animation: rotate 20s ease-in-out infinite 0s;
+            /* border: 2px solid #000; */
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotateZ(0deg);
+            }
+            100%{
+                transform: rotateZ(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -179,14 +138,18 @@
     <div class="gradient-background">
         <div class="absolute">
             <div class="absolute insert-0 justify-center">
-                <div class="bg-shape1 bg-teal opacity-50 bg-blur"></div>
-
-                <div class="bg-shape2 bg-primary opacity-50 bg-blur"></div>
-                <div class="bg-shape2 bg-primary opacity-50 bg-blur"></div>
-
-                <div class="bg-shape1 bg-purple opacity-50 bg-blur"></div>
-                <div class="bg-shape1 bg-purple opacity-50 bg-blur"></div>
-
+                <div class="box1 box">
+                    <div class="bg-shape bg-teal opacity-50 bg-blur"></div>
+                    <div class="bg-shape bg-primary opacity-50 bg-blur"></div>
+                    <div class="bg-shape bg-purple opacity-50 bg-blur"></div>
+                    <div class="bg-shape bg-green opacity-50 bg-blur"></div>
+                </div>
+                <div class="box2 box">
+                    <div class="bg-shape bg-purple opacity-50 bg-blur"></div>
+                    <div class="bg-shape bg-green opacity-50 bg-blur"></div>
+                    <div class="bg-shape bg-teal opacity-50 bg-blur"></div>
+                    <div class="bg-shape bg-primary opacity-50 bg-blur"></div>
+                </div>
             </div>
             <div class="frosted-container"></div>
         </div>
